@@ -1,59 +1,73 @@
-#Importo librerías
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
-from sklearn import svm
+from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-#lectura del dataset
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score
+
+# Cargar los datos y mostrar información básica
 diabetes_dataset = pd.read_csv("diabetes.csv")
-
-#Muestro los 5 primeros elementos de dataset
-print(diabetes_dataset.head())
-
-#cantidad de filas y columnas
 print(diabetes_dataset.shape)
-
-#información estadística
 print(diabetes_dataset.describe())
 
-#cantidad de diabéticos (1) y no diabéticos (0) en el dataset
-print(diabetes_dataset['Outcome'].value_counts())
-
-#Crear diagrama de barras
+# Visualizar el balance de clases en el dataset
 sns.countplot(x='Outcome', data=diabetes_dataset)
 plt.title('Cantidad de pacientes diabéticos y no diabéticos')
 plt.xlabel('Estado')
 plt.ylabel('Cantidad')
-#plt.show()
-
-
-#el % de glucosa en sangre en diabéticos es mayor que los que no lo son
-#a su vez, la personas de mayor edad son más suceptibles a tener diabetes.
-print(diabetes_dataset.groupby('Outcome').mean())
-
-# gráfico de dispersión que indica la relación entre la edad y el nivel de glucosa en sangre de los pacientes diabéticos y no diabéticos
-sns.scatterplot(x='Age', y='Glucose', hue='Outcome', data=diabetes_dataset)
-plt.title('Relación entre edad y nivel de glucosa en sangre')
-plt.xlabel('Edad')
-plt.ylabel('Nivel de glucosa en sangre')
-plt.xticks(range(0, 100, 10))
 plt.show()
 
-# diagrama de cajas y bigotes que compara la distribución del nivel de glucosa en sangre entre pacientes diabéticos y no diabéticos en el conjunto de datos. 
-sns.boxplot(x='Outcome', y='Glucose', data=diabetes_dataset, fliersize=3)
-plt.title('Distribución del nivel de glucosa en sangre para pacientes diabéticos y no diabéticos', fontsize=14)
-plt.xlabel('Diabético', fontsize=12)
-plt.ylabel('Nivel de glucosa', fontsize=12)
-plt.figure(figsize=(8,6))
-plt.show()
-
+# Visualizar la matriz de correlación
 corr = diabetes_dataset.corr()
 sns.heatmap(corr, annot=True, cmap='coolwarm')
 plt.show()
+
+# Separar el dataset en features de entrada (X) y variable target (y)
+X = diabetes_dataset.drop('Outcome', axis=1)
+y = diabetes_dataset['Outcome']
+
+# Estandarizar los datos de entrada con StandardScaler
+scaler = StandardScaler()
+X_std = scaler.fit_transform(X)
+
+# Separar el dataset estandarizado en conjuntos de entrenamiento y prueba
+X_train, X_test, y_train, y_test = train_test_split(X_std, y, test_size=0.2, stratify=y, random_state=2)
+
+# Entrenar un clasificador SVM con kernel lineal en el conjunto de entrenamiento
+classifier = SVC(kernel='linear', random_state=2)
+classifier.fit(X_train, y_train)
+
+# Realizar predicciones en los conjuntos de entrenamiento y prueba, y calcular la exactitud
+y_train_pred = classifier.predict(X_train)
+train_accuracy = accuracy_score(y_train, y_train_pred)
+print('Exactitud en el conjunto de entrenamiento:', train_accuracy)
+
+y_test_pred = classifier.predict(X_test)
+test_accuracy = accuracy_score(y_test, y_test_pred)
+print('Exactitud en el conjunto de prueba:', test_accuracy)
+
+# Realizar una predicción sobre nuevos datos usando el clasificador y escalador entrenados
+new_input = np.array([1, 89, 66, 23, 94, 28.1, 0.167, 21]).reshape(1, -1)
+new_input_scaled = scaler.transform(new_input)
+new_prediction = classifier.predict(new_input_scaled)
+
+# Mostrar el resultado de la predicción
+if new_prediction[0] == 0:
+    print('La persona no es diabética')
+else:
+    print('La persona es diabética')
+
 
 
 
