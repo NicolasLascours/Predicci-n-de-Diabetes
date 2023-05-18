@@ -17,6 +17,7 @@ Pandas
 Scikit-learn
 Matplotlib
 Jupyter Notebook (opcional, para visualizar el conjunto de datos y los resultados)
+
 Cómo instalar las bibliotecas requeridas
 Para instalar las bibliotecas requeridas, simplemente ejecute el siguiente comando en la terminal:
 
@@ -24,7 +25,7 @@ pip install numpy pandas scikit-learn matplotlib jupyter
 
 Cómo ejecutar la aplicación
 
-Para ejecutar la aplicación, simplemente abra el archivo modelo_reglog.ipynb en Jupyter Notebook y ejecute todas las celdas. Luego, siga las instrucciones en pantalla para proporcionar los valores de entrada y obtener la predicción.
+Para ejecutar la aplicación, simplemente abra el archivo modelo_rf_knn.ipynb en Jupyter Notebook y ejecute todas las celdas. Luego, siga las instrucciones en pantalla para proporcionar los valores de entrada y obtener la predicción.
 
 Atribuciones
 
