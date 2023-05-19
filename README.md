@@ -1,4 +1,4 @@
-#Predicción de Diabetes
+# Predicción de Diabetes
 Proyecto de ML para la predicción de diabetes con Python
 
 Este es un modelo de aprendizaje automático que puede predecir si una persona tiene diabetes o no. El modelo se basa en un conjunto de datos que contiene información sobre varios factores:
