@@ -1,51 +1,43 @@
-# Predicción de Diabetes
+#Predicción de Diabetes
+Proyecto de ML para la predicción de diabetes con Python
 
-Proyecto de Machine Learning para predecir la diabetes utilizando Python.
+Este es un modelo de aprendizaje automático que puede predecir si una persona tiene diabetes o no. El modelo se basa en un conjunto de datos que contiene información sobre varios factores:
+- Edad
+- Nivel de glucosa en sangre
+- Nivel de insulina en sangre
+- Índice de masa corporal (IMC)
+- Pedigrí de diabetes en la familia
 
-## Descripción del Proyecto
 
-Este proyecto consiste en un modelo de aprendizaje automático que puede predecir si una persona tiene diabetes o no. El modelo se basa en un conjunto de datos que contiene información sobre varios factores, como la edad, el nivel de glucosa en sangre, el nivel de insulina en sangre, el índice de masa corporal (IMC) y el historial familiar de diabetes.
+### Cómo utilizar el modelo
 
-## Cómo utilizar el modelo
+Para utilizar el modelo, simplemente inicie la aplicación y proporcione los valores correspondientes para los diferentes factores (edad, nivel de glucosa en sangre, nivel de insulina en sangre, IMC y pedigrí). La aplicación realizará una predicción sobre si la persona tiene diabetes o no.
 
-Para utilizar el modelo, sigue estos pasos:
+### Requisitos del sistema
 
-1. Clona este repositorio en tu máquina local.
-2. Asegúrate de tener Python instalado (versión X.X.X).
-3. Instala las dependencias ejecutando el siguiente comando: pip install -r requirements.txt
-4. Abre el archivo `modelo_rf_knn.ipynb` en Jupyter Notebook.
-5. Ejecuta todas las celdas del notebook.
-6. Sigue las instrucciones en pantalla para proporcionar los valores de entrada y obtener la predicción.
+La aplicación se puede ejecutar en cualquier sistema que tenga Python instalado, junto con las siguientes bibliotecas:
+- NumPy 
+- Pandas 
+- Scikit-learn 
+- Matplotlib 
+- Jupyter Notebook (opcional, para visualizar el conjunto de datos y los resultados)
 
-## Requisitos del sistema
+### Cómo instalar las bibliotecas requeridas
+Para instalar las bibliotecas requeridas, simplemente ejecute el siguiente comando en la terminal:
 
-El proyecto se puede ejecutar en cualquier sistema que cumpla con los siguientes requisitos:
 
-- Python (versión X.X.X)
-- NumPy
-- Pandas
-- Scikit-learn
-- Matplotlib
-- Jupyter Notebook (opcional, para visualizar los datos y resultados)
+`pip install numpy pandas scikit-learn matplotlib jupyter`
 
-## Atribuciones
 
-Este proyecto se basa en el conjunto de datos [Diabetes Data Set](www.kaggle.com/datasets/mathchi/diabetes-data-set) de Kaggle.
+### Cómo ejecutar
 
-## Autor
+Para ejecutar la aplicación, simplemente abra el archivo *modelo_rf_knn.ipynb* en Jupyter Notebook y ejecute todas las celdas. Luego, siga las instrucciones en pantalla para proporcionar los valores de entrada y obtener la predicción.
 
-Este proyecto fue creado por Nicolás Lascours.
+###Atribuciones
 
-## Contribución
+El modelo se basa en el conjunto de datos, disponible en el repositorio
+[de diabetes de Kaggle](www.kaggle.com/datasets/mathchi/diabetes-data-set)
 
-Las contribuciones son bienvenidas. Si deseas contribuir a este proyecto, sigue los siguientes pasos:
+#### Autor
 
-1. Haz un fork del repositorio.
-2. Crea una nueva rama (`git checkout -b feature/nueva-caracteristica`).
-3. Realiza tus cambios y realiza commit de ellos (`git commit -am 'Agrega una nueva característica'`).
-4. Haz push a la rama (`git push origin feature/nueva-caracteristica`).
-5. Abre un Pull Request y describe tus cambios detalladamente.
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para obtener más información.
+Este modelo fue creado por [Nicolás Lascours](https://www.linkedin.com/in/nicol%C3%A1s-lascours/)
