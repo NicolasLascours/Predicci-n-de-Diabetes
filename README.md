@@ -1,4 +1,4 @@
-#Predicción de Diabetes
+# Predicción de Diabetes
 Proyecto de ML para la predicción de diabetes con Python
 
 Este es un modelo de aprendizaje automático que puede predecir si una persona tiene diabetes o no. El modelo se basa en un conjunto de datos que contiene información sobre varios factores:
@@ -33,7 +33,7 @@ Para instalar las bibliotecas requeridas, simplemente ejecute el siguiente coman
 
 Para ejecutar la aplicación, simplemente abra el archivo *modelo_rf_knn.ipynb* en Jupyter Notebook y ejecute todas las celdas. Luego, siga las instrucciones en pantalla para proporcionar los valores de entrada y obtener la predicción.
 
-###Atribuciones
+### Atribuciones
 
 El modelo se basa en el conjunto de datos, disponible en el repositorio
 [de diabetes de Kaggle](www.kaggle.com/datasets/mathchi/diabetes-data-set)
